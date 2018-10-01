@@ -17,3 +17,9 @@ To deploy:
 ```
 npm run build
 ```
+
+For clock example:
+
+```
+npm run watch-clock
+```

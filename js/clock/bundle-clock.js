@@ -1,0 +1,1 @@
+console.error("Error: SyntaxError: Unexpected token / in JSON at position 694 while parsing json file /Users/david/development/repos/react-min-setup/package.json");

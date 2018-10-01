@@ -4,7 +4,11 @@
   "description": "react application",
   "scripts": {
     "build": "./node_modules/.bin/browserify -t [ babelify --presets [ react es2015 ] ] src/hello.jsx -o js/bundle.js --extension=.jsx",
-    "watch": "./node_modules/.bin/watchify -t [ babelify --presets [ react es2015 ] ] src/hello.jsx -o ./js/bundle.js --extension=.jsx -v"
+    "watch": "./node_modules/.bin/watchify -t [ babelify --presets [ react es2015 ] ] src/hello.jsx -o js/bundle.js --extension=.jsx -v",
+    "build-clock": "./node_modules/.bin/browserify -t [ babelify --presets [ react es2015 ] ] src/clock.jsx -o js/bundle-clock.js --extension=.jsx",
+    "watch-clock": "./node_modules/.bin/watchify -t [ babelify --presets [ react es2015 ] ] src/clock/clock.jsx -o js/clock/bundle-clock.js --extension=.jsx -d -v", // import everything into a file, then use babel/browserify/watchify
+    "watch-test": "./node_modules/.bin/babel src/clock -d js/bundle-clock.js -w",
+    "watch-clock-glob": "./node_modules/.bin/globify -t [ babelify --presets [ react es2015 ] ] 'src/clock/*.jsx' -w -v -o 'js/clock/bundle-watch.js'"
   },
   "dependencies": {
     "babel-preset-es2015": "6.9.0",
@@ -13,6 +17,16 @@
     "browserify": "13.0.1",
     "react": "15.1.0",
     "react-dom": "15.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "globify": "^2.3.1"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
   }
 }
