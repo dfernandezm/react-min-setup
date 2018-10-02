@@ -1,2 +1,4 @@
 package-lock.json
 node_modules
+js/bundle*.js
+js/clock/bundle*.js
